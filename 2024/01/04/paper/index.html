@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/KARNetGrasp/KARNetGrasp.github.io/img/favicon.ico">
+    <title>KARNet</title>
+    
+<link rel="stylesheet" href="/KARNetGrasp/KARNetGrasp.github.io/css/reset.css">
+
+    
+<link rel="stylesheet" href="/KARNetGrasp/KARNetGrasp.github.io/css/style.css">
+
+    
+<link rel="stylesheet" href="/KARNetGrasp/KARNetGrasp.github.io/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/KARNetGrasp/KARNetGrasp.github.io/css/fonts.css">
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+
+                <div class="post-main">
+
+    
+    
+        <div class="post-main-title">
+            KARNet: Infusing multi-source heterogeneous knowledge for language-conditional segmentation and grasping
+        </div>
+        <div class="post-meta">
+            2024-01-04
+        </div>
+        <div class="post-md">
+            <h2 id="An-overview-of-the-proposed-knowledge-driven-robotic-grasp-synthesis"><a href="#An-overview-of-the-proposed-knowledge-driven-robotic-grasp-synthesis" class="headerlink" title="An overview of the proposed knowledge-driven robotic grasp synthesis"></a>An overview of the proposed knowledge-driven robotic grasp synthesis</h2><p>An overview of KARNet architecture. Given a scene and language description of the target, our pipeline first fine-tunes the vision-language knowledge of CLIP to simultaneously understand visual and linguistic concepts. Second,  it queries the detailed description of entities from the external knowledge base (e.g., ChatGPT) to generate semantic prototypes and inject them. Third, it leverages the U-shaped structure and LGOP module to parse the object-specific features. Lastly, we utilize visual attributes (e.g., boundary) to facilitate the refinement of grasp poses.<br><img src="/KARNetGrasp/KARNetGrasp.github.io/./images/pipeline.jpg" alt="knowledge-driven robotic grasp synthesis"></p>
+<h2 id="Overview-of-KARNet"><a href="#Overview-of-KARNet" class="headerlink" title="Overview of KARNet"></a>Overview of KARNet</h2><p>An overview of CTNet architecture. Given an image-query pair, we first employ listen module to understand and align visual and linguistic concepts. Then, the perceive module recursively extracts object-orientied features with visual attributes and generates the target mask corresponding to the description. Last,  The grasp module aggregates the attribute-based and semantic-rich features to refine the grasp pose of the desired object.<br><img src="/KARNetGrasp/KARNetGrasp.github.io/./images/architecture.jpg" alt="Overview of KARNet"></p>
+<h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>Qualitative results of our proposed method.<br><img src="/KARNetGrasp/KARNetGrasp.github.io/./images/resultVisualization.jpg" alt="Visualization of our method"></p>
+<p>Comparison with other methods.<br><img src="/KARNetGrasp/KARNetGrasp.github.io/./images/compareresult.jpg" alt="Visualization of comparison"></p>
+<h2 id="Description-of-different-knowledge-bases"><a href="#Description-of-different-knowledge-bases" class="headerlink" title="Description of different knowledge bases"></a>Description of different knowledge bases</h2><p><img src="/KARNetGrasp/KARNetGrasp.github.io/./images/knowledgebase.jpg" alt="Description of different knowledge bases"></p>
+
+        </div>
+
+    
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2023 KARNet</span>
+    <span>Designed By <a target="_blank" href="https://github.com/xiejialong/CTNet/tree/web">Jialong Xie</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/KARNetGrasp/KARNetGrasp.github.io/css/a11y-dark.min.css">
+
+
+<script src="/KARNetGrasp/KARNetGrasp.github.io/js/highlight.min.js"></script>
+
+
+<script src="/KARNetGrasp/KARNetGrasp.github.io/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
