@@ -29,18 +29,18 @@
     <div class="post">
         <!-- <a class="post-title" href="/2024/01/04/paper/">Infusing Multi-Source Heterogeneous Knowledge for Language-Conditional Segmentation and Grasping</a> -->
         <div class="post-title" >Infusing Multi-Source Heterogeneous Knowledge for Language-Conditional Segmentation and Grasping</div>
-        <div class="post-authors" >Jialong Xie, Jin Liu, Saike Huang, Chaoqun Wang, Peng Duan, and  Fengyu Zhou</div>
-        <div class="post-affiliations" >Shandong University</div>
+        <div class="post-authors" >Jialong Xie, Jin Liu, Zhenwei Zhu, Chaoqun Wang, Peng Duan, and  Fengyu Zhou</div>
+        <div class="post-affiliations" >Shandong University, Liaocheng University</div>
         <div class="head-icon"> 
 
             
-                <a class="icon-container" target="_blank" rel="noopener" href="https://github.com/KARNetGrasp/KARNetGrasp.git">
+                <a class="icon-container" href="https://karnetgrasp.github.io/">
                     <i class="fa fa-github-square"></i>
                 </a>
             
 
             
-                <a class="icon-container" target="_blank" rel="noopener" href="https://youtu.be/WmgR4gvTsqk">
+                <a class="icon-container" target="_blank" rel="noopener" href="https://youtu.be/1cEuzOHTJyk">
                     <i class="fa fa-youtube-square"></i>
                 </a>
             
@@ -48,9 +48,9 @@
         </div>
         <div class="line"></div>
         <div class="post-abstract-title">Abstract</div>
-        <div class="post-abstract" >Language-conditioned segmentation and grasping aim to make precise language-to-pixel semantic alignment and stable robotic grasps in human-centric environments. Existing methods focus on matching the representation spaces between the whole sentences and the vision. However, these works ignore the semantic information carried by the object nouns, restraining the fine-grained semantic alignment. Moreover, they neglect the refinement of the grasp poses, resulting in object collision in the clutter. In this paper, we propose a \textbf{K}nowledge-\textbf{A}ugmented \textbf{R}efinement network (KARNet), which mimics three characteristics of human cognition to identify the desired object and constrain the grasp poses. Firstly,  we leverage the powerful image-text knowledge of CLIP to learn and align visual and linguistic concepts. Subsequently, we query external knowledge from ChatGPT to enrich the semantics of nouns. Finally, we design a fine-grained fusion decoder and refinement decoder to achieve coarse-to-fine object parsing and to refine the grasp pose using visual attributes, respectively. Extensive experiments on a cluttered household dataset show that the proposed model achieves state-of-the-art performance. Meanwhile, the real-world robotic applications demonstrate the effectiveness of our proposed approach.</div>
+        <div class="post-abstract" >Language-conditioned segmentation and grasping aim to make precise language-to-pixel semantic alignment and stable robotic grasps in human-centric environments. Existing methods focus on matching the whole sentences and the vision. However, these works overlook the semantic information of object nouns, restraining the fine-grained semantic alignment between vision and language. Moreover, the lack of geometry awareness, e.g., shape and scale, may cause an unstable grasp in cluttered environments. In this paper, we propose a Knowledge-Augmented Refinement network (KARNet), which infuses multi-source heterogeneous knowledge to improve the cognitive ability of robots. Firstly, we leverage the implicit image-text knowledge of the pretrained model, e.g., CLIP, to learn and align visual and linguistic concepts. Subsequently, we retrieve external knowledge from LLMs, e.g., GPT-4, to enrich the semantic information. Finally, we design a fine-grained fusion decoder to achieve coarse-to-fine object parsing and a refinement decoder to constrain grasp poses. Extensive experiments on the cluttered household dataset and real-world robotic applications demonstrate the effectiveness and accuracy of our proposed approach.</div>
         <div class="post-video-title">
-            <i class="fa fa-hand-o-right"></i><a  class= 'post-video-title' target="_blank" rel="noopener" href="https://youtu.be/WmgR4gvTsqk">Video on YouTube</a><i class="fa fa-hand-o-left"></i>
+            <i class="fa fa-hand-o-right"></i><a  class= 'post-video-title' target="_blank" rel="noopener" href="https://youtu.be/1cEuzOHTJyk">Video on YouTube</a><i class="fa fa-hand-o-left"></i>
             
         </div>
         
@@ -58,14 +58,14 @@
                 <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/WmgR4gvTsqk"
+                src="https://www.youtube.com/embed/1cEuzOHTJyk"
                 frameborder="0"
                 allowfullscreen
                 ></iframe>
             </div>
         
         <div class="post-except">
-            <h2 id="An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework"><a href="#An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework" class="headerlink" title="An overview of the proposed knowledge-driven robotic grasping framework"></a>An overview of the proposed knowledge-driven robotic grasping framework</h2><p>An overview of KARNet architecture. Given a scene and language description of the target, our pipeline first fine-tunes the vision-language knowledge of CLIP to simultaneously understand visual and linguistic concepts. Second,  it queries the detailed description of entities from the external knowledge base (e.g., ChatGPT) to generate semantic prototypes and inject them. Third, it leverages the U-shaped structure and LGOP module to parse the object-specific features. Lastly, we utilize visual attributes (e.g., boundary) to facilitate the refinement of grasp poses.<br><img src="/images/pipeline.jpg" alt="knowledge-driven robotic grasping framework"></p>
+            <h2 id="An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework"><a href="#An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework" class="headerlink" title="An overview of the proposed knowledge-driven robotic grasping framework"></a>An overview of the proposed knowledge-driven robotic grasping framework</h2><p>An overview of KARNet architecture. Given a scene and language description of the target, our pipeline first fine-tunes the vision-language knowledge of CLIP to simultaneously understand visual and linguistic concepts. Second,  it queries the detailed description of entities from the external knowledge base (e.g., GPT-4) to generate semantic prototypes and inject them. Third, it leverages the U-shaped structure and LGOP module to parse the object-specific features. Lastly, we utilize visual attributes (e.g., boundary) to facilitate the refinement of grasp poses.<br><img src="/images/pipeline.jpg" alt="knowledge-driven robotic grasping framework"></p>
 <h2 id="Overview-of-KARNet"><a href="#Overview-of-KARNet" class="headerlink" title="Overview of KARNet"></a>Overview of KARNet</h2><p>An overview of CTNet architecture. Given an image-query pair, we first employ listen module to understand and align visual and linguistic concepts. Then, the perceive module recursively extracts object-orientied features with visual attributes and generates the target mask corresponding to the description. Last,  The grasp module aggregates the attribute-based and semantic-rich features to refine the grasp pose of the desired object.<br><img src="/images/architecture.jpg" alt="Overview of KARNet"></p>
 <h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>Qualitative results of our proposed method.<br><img src="/images/resultVisualization.jpg" alt="Visualization of our method"></p>
 <p>Comparison with other methods.<br><img src="/images/compareresult.jpg" alt="Visualization of comparison"></p>
