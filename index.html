@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <link rel="alternate icon" type="image/png" href="/img/favicon.ico">
-    <title>KARNet</title>
+    <title>CSGC</title>
     
 <link rel="stylesheet" href="/css/reset.css">
 
@@ -17,8 +17,11 @@
     
 <link rel="stylesheet" href="/css/fonts.css">
 
-
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <!-- 
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+ -->
+    <script src="https://kit.fontawesome.com/6ac35365cd.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> -->
 <meta name="generator" content="Hexo 6.3.0"></head>
     <body>
         <div class="paper">
@@ -27,30 +30,29 @@
                 <div class="post-list">
     
     <div class="post">
-        <!-- <a class="post-title" href="/2024/03/12/paper/">Infusing Multi-Source Heterogeneous Knowledge for Language-Conditional Segmentation and Grasping</a> -->
-        <div class="post-title" >Infusing Multi-Source Heterogeneous Knowledge for Language-Conditional Segmentation and Grasping</div>
-        <div class="post-authors" >Jialong Xie, Jin Liu, Zhenwei Zhu, Chaoqun Wang, Peng Duan, and  Fengyu Zhou</div>
-        <div class="post-affiliations" >Shandong University, Liaocheng University</div>
+        <!-- <a class="post-title" href="/2024/07/08/paper/">Semi-Supervised Language-Conditioned Grasping with Curriculum-Scheduled Augmentation and Geometric Consistency</a> -->
+        <div class="post-title" >Semi-Supervised Language-Conditioned Grasping with Curriculum-Scheduled Augmentation and Geometric Consistency</div>
+        <div class="post-authors" >Jialong Xie, Fengyu Zhou, Jin Liu, and Chaoqun Wang</div>
+        <div class="post-affiliations" >Shandong University</div>
         <div class="head-icon"> 
 
             
-                <a class="icon-container" target="_blank" rel="noopener" href="https://github.com/KARNetGrasp/KARNetGrasp.git">
-                    <i class="fa fa-github-square"></i>
+                <a class="icon-container" target="_blank" rel="noopener" href="https://github.com/CSGCGrasp/CSGC.git">
+                    <i class="fa-brands fa-square-github"></i>
                 </a>
             
-
+   
             
-                <a class="icon-container" target="_blank" rel="noopener" href="https://youtu.be/cmx21_H4CfY">
-                    <i class="fa fa-youtube-square"></i>
+                <a class="icon-container" target="_blank" rel="noopener" href="https://youtu.be/iKC78uq1NxU">
+                    <i class="fa-brands fa-square-youtube"></i>
                 </a>
-            
             
         </div>
         <div class="line"></div>
         <div class="post-abstract-title">Abstract</div>
-        <div class="post-abstract" >Language-conditioned segmentation and grasping requires the robot to simultaneously identify and grasp a specific object in accordance with human linguistic instruction. Existing methods generally involve semantic matching between the entire instruction and raw RGB images to ground the desired object, generating a grasp pose for that object. However, they overlook the semantic effectiveness of the nouns in the instruction, struggling with fine-grained object localization. Furthermore, they lack sufficient geometry context of the object to reason the optimal grasp pose, resulting in instability and failures in cluttered environments. In this paper, we propose a Knowledge-Augmented Refinement network (KARNet) to jointly conduct fine-grained object segmentation and grasping detection to tackle these challenges. Specifically, to mine the semantic context of the nouns, we introduce an entity semantic enhancement module to fuse the knowledge from both the external knowledge base and the CLIP. Besides, a refinement decoder is proposed to generate segmentation masks and incorporate the geometry-aware features to yield suitable grasp poses for the desired objects. Notably, to achieve better context fusion between linguistics and vision, we further introduce a language-guided object parsing (LGOP) module to conduct coarse-to-fine multi-modal fusion. We conduct extensive experiments on the cluttered household dataset and demonstrate that our proposed approach attains a grasping accuracy of 97.97% and segmentation OIoU of 94.35%, reaching state-of-the-art performance. The effectiveness of our method is further validated in real-world applications.</div>
+        <div class="post-abstract" >Language-conditioned grasping (LCG) is an essential skill for robotic manipulation and has recently attracted increasing interest. However, existing methods often need numerous paired image-text-pose annotations for fully supervised learning, which are tedious and expensive. In this paper, we first propose a semi-supervised language-conditioned grasping framework that achieves data-efficient object grounding and grasping detection according to the language description. Recent studies on semi-supervised learning have made progress in vision tasks, e.g., semantic segmentation. However, these methods suffer from over-distorted data perturbations, resulting in slow and unstable convergence for multi-modal inputs in the early stage. Moreover, they do not consider the consistency between perceptive and grasping location, leading to hand-eye inconsistency and low grasp accuracy. Therefore, we introduce a Curriculum-Scheduled augmentation and Geometric Consistency (CSGC) strategy to overcome above problem. Concretely, We design a curriculum-scheduled augmentation strategy to progressively improve data diversity from easy to difficult, facilitating stable knowledge distillation and model's convergence. Meanwhile, we present a geometry-aware consistency regularization to constrain the region alignment between object perception and grasping confidence, improving the quality of pseudo-labels and grasp accuracy. Extensive experimental results demonstrate the effectiveness and practicability of our proposed method in the limited labeled data.</div>
         <div class="post-video-title">
-            <i class="fa fa-hand-o-right"></i><a  class= 'post-video-title' target="_blank" rel="noopener" href="https://youtu.be/cmx21_H4CfY">Video on YouTube</a><i class="fa fa-hand-o-left"></i>
+            <i class="fa fa-hand-o-right"></i><a  class= 'post-video-title' target="_blank" rel="noopener" href="https://youtu.be/iKC78uq1NxU">Video on YouTube</a><i class="fa fa-hand-o-left"></i>
             
         </div>
         
@@ -58,28 +60,28 @@
                 <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/cmx21_H4CfY"
+                src="https://www.youtube.com/embed/iKC78uq1NxU"
                 frameborder="0"
                 allowfullscreen
                 ></iframe>
             </div>
         
         <div class="post-except">
-            <h2 id="An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework"><a href="#An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework" class="headerlink" title="An overview of the proposed knowledge-driven robotic grasping framework"></a>An overview of the proposed knowledge-driven robotic grasping framework</h2><p>An overview of the proposed knowledge-driven robotic grasping framework. This pipeline mimics the three stages of the cognitive process for humans. The first stage is to apply the image-text knowledge of CLIP. The second stage is to enrich the semantics of the sentence through external knowledge continuously. The third stage is to enhance multi-modal fusion and grasping ability by geometry-aware cues.<br><img src="/images/pipeline.jpg" alt="knowledge-driven robotic grasping framework"></p>
-<h2 id="Overview-of-KARNet"><a href="#Overview-of-KARNet" class="headerlink" title="Overview of KARNet"></a>Overview of KARNet</h2><p>An overview of KARNet architecture. Given a scene and language description of the target, our pipeline first fine-tunes the vision-language knowledge of CLIP to simultaneously understand visual and linguistic concepts. Second,  it queries the detailed description of entities from the external knowledge base, e.g., GPT-4, to generate semantic prototypes and inject them. Third, it leverages the U-shaped structure and LGOP module to parse the object-specific features. Lastly, we utilize geometry-aware features (e.g., boundary) to facilitate the refinement of grasp poses.<br><img src="/images/architecture.jpg" alt="Overview of KARNet"></p>
-<h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>Qualitative results of our proposed method.<br><img src="/images/resultVisualization.jpg" alt="Visualization of our method"></p>
+            <h2 id="An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework"><a href="#An-overview-of-the-proposed-knowledge-driven-robotic-grasping-framework" class="headerlink" title="An overview of the proposed knowledge-driven robotic grasping framework"></a>An overview of the proposed knowledge-driven robotic grasping framework</h2><p>An overview of the proposed knowledge-driven robotic grasping framework. This pipeline mimics the three stages of the cognitive process for humans. The first stage is to apply the image-text knowledge of CLIP. The second stage is to enrich the semantics of the sentence through external knowledge continuously. The third stage is to enhance multi-modal fusion and grasping ability by geometry-aware cues.<br><img src="/images/scheme.jpg" alt="knowledge-driven robotic grasping framework"></p>
+<h2 id="Overview-of-KARNet"><a href="#Overview-of-KARNet" class="headerlink" title="Overview of KARNet"></a>Overview of KARNet</h2><p>An overview of KARNet architecture. Given a scene and language description of the target, our pipeline first fine-tunes the vision-language knowledge of CLIP to simultaneously understand visual and linguistic concepts. Second,  it queries the detailed description of entities from the external knowledge base, e.g., GPT-4, to generate semantic prototypes and inject them. Third, it leverages the U-shaped structure and LGOP module to parse the object-specific features. Lastly, we utilize geometry-aware features (e.g., boundary) to facilitate the refinement of grasp poses.<br><img src="/images/OurMethod.jpg" alt="Overview of KARNet"></p>
+<h2 id="Qualitative-results"><a href="#Qualitative-results" class="headerlink" title="Qualitative results"></a>Qualitative results</h2><p>Qualitative results of our proposed method.<br><img src="/images/compare_more.jpg" alt="Visualization of our method"></p>
 <p>Comparison with other methods.<br><img src="/images/compareresult.jpg" alt="Visualization of comparison"></p>
-<h2 id="Description-of-different-knowledge-bases"><a href="#Description-of-different-knowledge-bases" class="headerlink" title="Description of different knowledge bases"></a>Description of different knowledge bases</h2><p><img src="/images/knowledgebase.jpg" alt="Description of different knowledge bases"></p>
+<h2 id="Whole-process-of-CSGC"><a href="#Whole-process-of-CSGC" class="headerlink" title="Whole process of CSGC"></a>Whole process of CSGC</h2><p><img src="/images/semiSupervised.jpg" alt="Description of different knowledge bases"></p>
 
-            <!-- <a class="read-more" href="/2024/03/12/paper/"> ... </a> -->
+            <!-- <a class="read-more" href="/2024/07/08/paper/"> ... </a> -->
         </div>
-        <div class="post-date">2024.03.12</div>
+        <div class="post-date">2024.07.08</div>
     </div>
     
 </div>
 
                 <div class="footer">
-    <span>Copyright © 2023 KARNet</span>
+    <span>Copyright © 2023 CSGC</span>
     <span>Designed By <a target="_blank" href="https://github.com/xiejialong/CTNet/tree/web">Jialong Xie</a></span>
 </div>
 
